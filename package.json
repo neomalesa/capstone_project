@@ -1,0 +1,12 @@
+{
+  "name": "airbnb-clone",
+  "version": "1.0.0",
+  "description": "Airbnb Clone Capstone",
+  "scripts": {
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install --include=dev && npm run build"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
