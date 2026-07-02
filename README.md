@@ -6,10 +6,10 @@ A comprehensive, full-stack Airbnb clone built as a capstone project. This appli
 
 **🔗 [Live Demo on Heroku](https://blooming-waters-45921-40c591d120cc.herokuapp.com/)**
 
-## ✨ Features
+## Features
 
 ### Client Frontend
-- **Modern UI/UX:** Pixel-perfect clone of Airbnb's core design system, fully responsive across mobile and desktop.
+- **UI/UX:** Close clone of Airbnb's core design system, fully responsive across mobile and desktop.
 - **Dynamic Search & Filtering:** Browse properties by location.
 - **Interactive Visual Calendar:** Custom-built interactive date picker for selecting check-in and check-out dates.
 - **Dynamic Cost Calculator:** Automatically calculates nightly rates, cleaning fees, service fees, and occupancy taxes based on selected dates.
@@ -26,7 +26,7 @@ A comprehensive, full-stack Airbnb clone built as a capstone project. This appli
 - **Database:** MongoDB and Mongoose ODM for efficient, schema-based data modeling.
 - **Security:** Password hashing, JWT session handling, and protected API routes.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend:** React.js, Vite, Vanilla CSS
 - **Backend:** Node.js, Express.js
@@ -34,7 +34,7 @@ A comprehensive, full-stack Airbnb clone built as a capstone project. This appli
 - **Authentication:** JSON Web Tokens (JWT), bcrypt
 - **Deployment:** Heroku
 
-## 🚀 Local Setup Instructions
+##  Local Setup Instructions
 
 If you want to run this project locally, follow these steps:
 
