@@ -61,6 +61,7 @@ const Location = () => {
                 <img 
                   src={loc.images && loc.images.length > 0 ? loc.images[0] : '/images/placeholder_main.png'} 
                   alt={loc.title} 
+                  onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }}
                   style={{ width: '300px', height: '200px', objectFit: 'cover', borderRadius: '12px', flexShrink: 0 }} 
                 />
                 

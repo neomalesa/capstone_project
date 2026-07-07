@@ -53,6 +53,7 @@ const DashboardListings = ({ setActiveTab }) => {
             <img 
               src={listing.images && listing.images.length > 0 ? listing.images[0] : '/images/placeholder_main.png'} 
               alt={listing.title} 
+              onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }}
               style={{ width: '160px', height: '120px', objectFit: 'cover', borderRadius: '8px', marginRight: '24px' }} 
             />
             <div style={{ flex: 1 }}>

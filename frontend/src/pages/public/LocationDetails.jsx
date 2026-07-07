@@ -252,13 +252,13 @@ const LocationDetails = () => {
         {/* Image Gallery */}
         <div style={{ display: 'flex', gap: '8px', height: '400px', marginBottom: '40px', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>
           <div style={{ flex: 1 }}>
-            <img src={images[0]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Main" />
+            <img src={images[0]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Main" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '8px', flex: 1 }}>
-            <img src={images[1]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 1" />
-            <img src={images[2]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 2" />
-            <img src={images[3]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 3" />
-            <img src={images[4]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 4" />
+            <img src={images[1]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 1" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_kitchen.png'; }} />
+            <img src={images[2]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 2" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_bathroom.png'; }} />
+            <img src={images[3]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 3" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_bedroom.png'; }} />
+            <img src={images[4]} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Gallery 4" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_exterior.png'; }} />
           </div>
         </div>
 
@@ -274,6 +274,7 @@ const LocationDetails = () => {
                 <img 
                   src={accommodation.hostImage || "/images/placeholder_avatar.png"} 
                   alt="Host" 
+                  onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_avatar.png'; }}
                   style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} 
                 />
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style={{ display: 'block', height: '16px', width: '16px', fill: '#ff385c', position: 'absolute', bottom: '0px', right: '-4px', backgroundColor: '#fff', borderRadius: '50%', border: '2px solid #fff' }}><path d="M16 1a15 15 0 1 1 0 30 15 15 0 0 1 0-30zm6.14 8.78L15 16.92l-4.14-4.14-2.12 2.12L15 21.16l9.26-9.26-2.12-2.12z"></path></svg>
@@ -310,7 +311,7 @@ const LocationDetails = () => {
               <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', paddingBottom: '8px' }}>
                 {[...Array(accommodation.bedrooms || 1)].map((_, i) => (
                   <div key={i} style={{ width: '320px', flexShrink: 0 }}>
-                    <img src={images[(i + 1) % images.length]} alt={`Bedroom ${i + 1}`} style={{ width: '100%', height: '213px', objectFit: 'cover', borderRadius: '12px', marginBottom: '12px' }} />
+                    <img src={images[(i + 1) % images.length]} alt={`Bedroom ${i + 1}`} onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_bedroom.png'; }} style={{ width: '100%', height: '213px', objectFit: 'cover', borderRadius: '12px', marginBottom: '12px' }} />
                     <h4 style={{ margin: '0 0 4px 0', fontSize: '16px', fontWeight: '600', color: '#222222' }}>{accommodation.bedrooms > 1 ? `Bedroom ${i + 1}` : 'Bedroom'}</h4>
                     <p style={{ margin: 0, color: '#717171', fontSize: '14px' }}>1 {i === 0 ? 'king' : 'queen'} bed</p>
                   </div>
@@ -362,7 +363,7 @@ const LocationDetails = () => {
             {/* Host Details */}
             <div style={{ padding: '32px 0', borderBottom: '1px solid var(--border-color)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
-                <img src={accommodation.hostImage || "/images/placeholder_avatar.png"} alt="Host" style={{ width: '64px', height: '64px', borderRadius: '50%' }} />
+                <img src={accommodation.hostImage || "/images/placeholder_avatar.png"} alt="Host" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_avatar.png'; }} style={{ width: '64px', height: '64px', borderRadius: '50%' }} />
                 <div>
                   <h3 style={{ margin: '0 0 4px 0', fontSize: '22px' }}>Hosted by {accommodation.hostName || 'Host'}</h3>
                   <p style={{ margin: 0, color: 'var(--text-light)' }}>Joined in 2021</p>

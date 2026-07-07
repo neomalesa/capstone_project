@@ -29,7 +29,7 @@ const Home = () => {
           padding: '80px 40px',
           textAlign: 'center',
           marginTop: '20px',
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url("/images/home/hero.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '400px',
@@ -49,10 +49,10 @@ const Home = () => {
           <h2 style={{ fontSize: '32px', marginBottom: '30px' }}>Inspiration for your next trip</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
             {[
-              { title: 'Sandton City', distance: '53 km away', color: '#cc2d4a', img: 'https://images.unsplash.com/photo-1575917649705-5b59aaa12e6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-              { title: 'Cape Town', distance: '1,400 km away', color: '#bc1a6e', img: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-              { title: 'Paris, France', distance: '8,700 km away', color: '#de3151', img: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' },
-              { title: 'Tokyo, Japan', distance: '13,500 km away', color: '#d93b30', img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' }
+              { title: 'Sandton City', distance: '53 km away', color: '#cc2d4a', img: '/images/home/inspire_1.jpg' },
+              { title: 'Cape Town', distance: '1,400 km away', color: '#bc1a6e', img: '/images/home/inspire_2.jpg' },
+              { title: 'Paris, France', distance: '8,700 km away', color: '#de3151', img: '/images/home/inspire_3.jpg' },
+              { title: 'Tokyo, Japan', distance: '13,500 km away', color: '#d93b30', img: '/images/home/inspire_4.jpg' }
             ].map((dest, i) => (
               <div key={i} style={{
                 borderRadius: 'var(--radius-lg)',
@@ -62,7 +62,7 @@ const Home = () => {
                 cursor: 'pointer',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
               }}>
-                <img src={dest.img} alt={dest.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                <img src={dest.img} alt={dest.title} onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
                 <div style={{ padding: '20px', minHeight: '120px' }}>
                   <h3 style={{ fontSize: '24px', marginBottom: '8px' }}>{dest.title}</h3>
                   <p style={{ fontSize: '14px' }}>{dest.distance}</p>
@@ -81,7 +81,7 @@ const Home = () => {
               padding: '40px',
               color: 'white',
               height: '400px',
-              backgroundImage: 'url("https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")',
+              backgroundImage: 'url("/images/home/exp_1.jpg")',
               backgroundSize: 'cover'
             }}>
               <h3 style={{ fontSize: '36px', marginBottom: '20px', maxWidth: '300px' }}>Things to do on your trip</h3>
@@ -92,7 +92,7 @@ const Home = () => {
               padding: '40px',
               color: 'white',
               height: '400px',
-              backgroundImage: 'url("https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")',
+              backgroundImage: 'url("/images/home/exp_2.jpg")',
               backgroundSize: 'cover'
             }}>
               <h3 style={{ fontSize: '36px', marginBottom: '20px', maxWidth: '300px' }}>Things to do from home</h3>
@@ -124,7 +124,7 @@ const Home = () => {
             borderRadius: 'var(--radius-lg)',
             padding: '80px 40px',
             color: 'white',
-            backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80")',
+            backgroundImage: 'linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("/images/home/host_banner.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             display: 'flex',

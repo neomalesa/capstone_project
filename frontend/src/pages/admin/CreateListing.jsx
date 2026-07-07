@@ -297,7 +297,7 @@ const CreateListing = () => {
                   }}>
                     {imageFiles.map((src, i) => (
                       <div key={i} style={{ aspectRatio: '1', borderRadius: '8px', overflow: 'hidden', border: '1px solid #ebebeb' }}>
-                        <img src={src} alt="preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src={src} alt="preview" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       </div>
                     ))}
                   </div>

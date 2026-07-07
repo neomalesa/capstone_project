@@ -156,7 +156,7 @@ const CreateListingForm = ({ setActiveTab }) => {
               <button type="button" onClick={() => fileInputRef.current.click()} style={{ backgroundColor: '#0056b3', color: 'white', border: 'none', borderRadius: '6px', padding: '8px 16px', cursor: 'pointer', marginBottom: '12px' }}>Select Images</button>
               <input type="file" multiple accept="image/*" onChange={handleImageChange} ref={fileInputRef} style={{ display: 'none' }} />
               <div style={{ border: '1px solid #b0b0b0', borderRadius: '8px', minHeight: '100px', padding: '12px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {imageFiles.length === 0 ? <span style={{ color: '#717171', fontSize: '14px' }}>No images</span> : imageFiles.map((src, i) => <img key={i} src={src} alt="preview" style={{ width: '60px', height: '60px', objectFit: 'cover' }} />)}
+                {imageFiles.length === 0 ? <span style={{ color: '#717171', fontSize: '14px' }}>No images</span> : imageFiles.map((src, i) => <img key={i} src={src} alt="preview" onError={(e) => { e.target.onerror = null; e.target.src = '/images/placeholder_main.png'; }} style={{ width: '60px', height: '60px', objectFit: 'cover' }} />)}
               </div>
             </div>
 
